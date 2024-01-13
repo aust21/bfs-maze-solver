@@ -1,5 +1,6 @@
 from maze import maze
 from collections import deque
+import matplotlib.pyplot as plt
 
 
 def search_bfs(maze, start, end):
@@ -33,15 +34,37 @@ def search_bfs(maze, start, end):
 	return None
 
 
-def display_results(path):
+def visualize_path(maze, path):
+	if not path:
+		return 
+	plt.imshow(maze, cmap='viridis', origin='upper', interpolation='nearest')
+	for coordinate in path:
+		plt.text(coordinate[1], coordinate[0], 'X', ha='center', va='center', color='red', fontsize=8)
+	plt.show()
+
+
+def display_results(path, maze):
 	if path:
 		return f"shortest path is {path}"
+
+	print("Here's the generated maze:\n")
+	for row in maze:
+		print(row)
 	return "Sorry there is no path found."
+
 
 # can change values 
 start = (0, 0)
 end = (2, 0)
 
+# maze = [
+# [0, 0, 1, 0, 1],
+# [1, 0, 0, 0, 1],
+# [0, 0, 1, 1, 0],
+# [0, 0, 1, 1, 0],
+# [1, 1, 0, 1, 1],
+# ]
 
 path = search_bfs(maze, start, end)
-print(display_results(path))
+visualize_path(maze, path)
+print(display_results(path, maze))

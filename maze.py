@@ -20,4 +20,4 @@ def get_maze_size():
 
 maze_size = get_maze_size()
 maze = generate_maze(maze_size)
-# print(maze)
+
