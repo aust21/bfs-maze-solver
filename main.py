@@ -1,4 +1,4 @@
-# from maze import maze
+from maze import maze
 from collections import deque
 
 
