@@ -7,6 +7,9 @@ def search_bfs(maze, start, end):
 	queue = deque([(start, [start])])
 	visited_nodes = set()
 
+	if start == 1:
+		return None
+		
 	while queue:
 		current_node, path = queue.popleft()
 

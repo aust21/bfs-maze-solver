@@ -1,12 +1,12 @@
+import numpy as np
 import random
+
 def generate_maze(maze_size):
 	maze = []
 	for row in range(maze_size):
-		blocks = []
-		for col in range(maze_size):
-			blocks.append(random.choice([0, 1]))
+		blocks = np.array([random.choice([0, 1]) for _ in range(maze_size)])
 		maze.append(blocks)
-	return maze
+	return np.array(maze)
 
 
 def get_maze_size():
@@ -20,3 +20,4 @@ def get_maze_size():
 
 maze_size = get_maze_size()
 maze = generate_maze(maze_size)
+# print(maze)
