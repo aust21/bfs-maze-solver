@@ -1,4 +1,4 @@
-from maze import maze
+# from maze import maze
 from collections import deque
 
 
@@ -7,9 +7,10 @@ def search_bfs(maze, start, end):
 	queue = deque([(start, [start])])
 	visited_nodes = set()
 
-	if start == 1:
+	# immediately return if starting position is on an obstacle
+	if maze[start[0]][start[1]] == 1:
 		return None
-		
+
 	while queue:
 		current_node, path = queue.popleft()
 
@@ -39,7 +40,7 @@ def display_results(path):
 
 # can change values 
 start = (0, 0)
-end = (4, 0)
+end = (2, 0)
 
 
 path = search_bfs(maze, start, end)
