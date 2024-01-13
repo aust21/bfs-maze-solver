@@ -3,6 +3,7 @@ from collections import deque
 import matplotlib.pyplot as plt
 import algorithm
 
+
 def display_results(path, maze):
 	if path:
 		return f"shortest path is {path}"

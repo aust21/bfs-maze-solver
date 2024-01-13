@@ -11,5 +11,5 @@
 		    [0, 1, 1, 1, 1],
 		    [0, 0, 0, 0, 0]
 		]
-- change start and end node in main.py line 38 and 39 for your desired start and end position
+- change start and end node in main.py for your desired start and end position
 - run main.py
